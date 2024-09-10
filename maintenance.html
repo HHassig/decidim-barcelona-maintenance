@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We're Under Maintenance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('decidim-barcelona.jpg');
+            background-size: cover;  /* This makes the image cover the entire background */
+            background-repeat: no-repeat;  /* Prevents the image from repeating */
+            background-position: center;   /* Centers the image */
+            background-attachment: fixed;  /* Keeps the image fixed in the viewport */
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.8);  /* Adds a semi-transparent white background */
+            max-width: 90%;
+            width: 600px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #d9534f;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+        .lang-toggle {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+        .lang-toggle a {
+            color: #0056b3;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .lang-toggle a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="content">
+            <img src="logo.png" alt="Decidim Barcelona" style="width: 75%;">
+            <h1>Desconectado por mantenimiento</h1>
+            <p>Decidim.barcelona está en mantenimiento en este momento.</p>
+            <p>Por favor, vuelva más tarde.</p>
+            <p>Rogamos disculpes las molestias.</p>
+        </div>
+        <div class="lang-toggle">
+            <a href="#" onclick="toggleLanguage('es')">Español</a> | 
+            <a href="#" onclick="toggleLanguage('cat')">Català</a>
+        </div>
+    </div>
+    <script>
+        function toggleLanguage(lang) {
+            const content = document.getElementById('content');
+            if (lang === 'cat') {
+                content.innerHTML = `
+                    <img src="logo.png" alt="Decidim Barcelona" style="width: 75%;">
+                    <h1>Deconnectat per manteniment</h1>
+                    <p>Decidim.barcelona està en manteniment en aquest moment.</p>
+                    <p>Si us plau, torna a intentar-ho més tard.</p>
+                    <p>Preguem disculpis les molèsties.</p>
+                `;
+            } else {
+                content.innerHTML = `
+                    <img src="logo.png" alt="Decidim Barcelona" style="width: 75%;">
+                    <h1>Desconectado por mantenimiento</h1>
+                    <p>Decidim.barcelona está en mantenimiento en este momento.</p>
+                    <p>Por favor, vuelva más tarde.</p>
+                    <p>Rogamos disculpes las molestias.</p>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
